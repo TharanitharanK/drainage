@@ -5,7 +5,8 @@ from firebase_admin import credentials, firestore
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 import time
-
+from flask import Flask, jsonify
+app = Flask(__name__)
 # Initialize Firebase
 cred = credentials.Certificate(r"C:\Users\shanm\Downloads\serviceAccountKey.json")
 firebase_admin.initialize_app(cred)
@@ -126,3 +127,5 @@ def predict_drainage():
 while True:
     predict_drainage()
     time.sleep(60)  
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=80)
