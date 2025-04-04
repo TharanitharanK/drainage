@@ -8,7 +8,7 @@ import time
 from flask import Flask, jsonify
 app = Flask(__name__)
 # Initialize Firebase
-cred = credentials.Certificate(r"C:\Users\shanm\Downloads\serviceAccountKey.json")
+cred = credentials.Certificate("serviceAccountKey.json")
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
